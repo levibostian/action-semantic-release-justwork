@@ -1,0 +1,18 @@
+name: "semantic-release just work"
+description: "GitHub Action to perform setup steps for semantic-release tool to avoid common pitfalls and errors."
+author: "levibostian"
+runs:
+  using: "composite"
+  steps:
+    - name: Fix problem 1 - Trigger future workflows 
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+    - name: Fix problem 2 -  Continuously updated tags 
+      run: git fetch -tp -f --all
+      shell: bash 
+
+branding:
+  icon: 'thumbs-up'  
+  color: 'yellow'

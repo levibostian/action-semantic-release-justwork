@@ -1,0 +1,14 @@
+name: Action major version bump 
+
+on:
+  release:
+    types: [published, edited]
+
+jobs:
+  actions-tagger:
+    runs-on: ubuntu-latest
+    steps:
+      # Will automatically release vX for major releases after each deployment
+      - uses: Actions-R-Us/actions-tagger@v2
+        env:
+          GITHUB_TOKEN: "${{ github.token }}"
