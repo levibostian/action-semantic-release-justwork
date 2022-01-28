@@ -20,5 +20,6 @@ jobs:
           semantic_version: 18
           extra_plugins: |
             @semantic-release/git@10
+            @semantic-release/changelog@6
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_PUSH_TOKEN }}
